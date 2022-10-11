@@ -16,17 +16,21 @@ const verificarRol = (req, res, next) => {
 
 const verificarToken = (req, res, next) => {
     const token = req.header.token;
-    const {persona} = jwt.verify(token, process.env.CLAVE_SECRETA);
-    if (persona) {
-        req.personas = persona;
-        next();
-    } else {
+    try 
+    {
+        const {persona} = jwt.verify(token, process.env.CLAVE_SECRETA);
+    } catch(e) {
         res.status(401).json({
             resu: "Fallo de autenticacion",
-            err
+            e
         })
         next();
-    }    
+    }
+
+    if (persona) {
+        req.get(token);
+        next();
+    }   
 };
 
 module.exports = {verificarRol, verificarToken};
