@@ -20,6 +20,8 @@ const generarToken = (id_usuario) => {
             }
         });
     });
-}
+};
 
-module.exports = {generarToken};
+
+
+module.exports = {generarToken, verificarToken};
