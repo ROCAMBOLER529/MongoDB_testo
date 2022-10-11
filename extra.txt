@@ -1,4 +1,3 @@
-npm install bcryptjs
 https://www.npmjs.com/package/bcryptjs
 
 var bcrypt = require('bcryptjs');
@@ -10,4 +9,10 @@ bcrypt.compareSync("not_bacon", hash); // false
 
 ----------------------------
 
+npm install --save express
+npm install --save mongooose
+npm install hbs
+npm install body-parser
+npm install bcryptjs
 npm install jsonwebtokens
+npm start
