@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "633b56f63f0e7ee5d31ad7d9"
+  },
+  "dni": "43918478",
+  "nombre": "Lucio",
+  "apellido": "Alonso",
+  "mail": "lucioalonso@gmail.com",
+  "telefono": "1128665544"
+},{
+  "_id": {
+    "$oid": "633b56f63f0e7ee5d31ad7da"
+  },
+  "dni": "43918478",
+  "nombre": "Lucas",
+  "apellido": "Desumbila",
+  "mail": "lucasdesumbila@gmail.com",
+  "telefono": "1118665544"
+},{
+  "_id": {
+    "$oid": "633b56f63f0e7ee5d31ad7db"
+  },
+  "dni": "44918478",
+  "nombre": "Juan",
+  "apellido": "Perotti",
+  "mail": "juanperotti@gmail.com",
+  "telefono": "1148665544"
+}]
