@@ -1,10 +1,10 @@
+require("./config/config.js");
 const express = require("express");
 const mongoose = require("mongoose");
 const hbs = require("hbs");
 // Middleware necesario para parsear parametros del POST.
 const bodyParser = require('body-parser');
 
-const port = 3000;
 const app = express();
 
 app.use(express.static("public"));
@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-app.use(require("./routes/index")); //importante que este esto DESPUES de urlencoded
+app.use(require("./routes/index")); //importante que esto DESPUES de urlencoded
 
 let mongodb = "mongodb://localhost:27017/municipio";
 
@@ -42,6 +42,6 @@ app.get("/usuario/contribuyente", (req, res) => {
   res.render("contribuyente.hbs");
 });
 
-app.listen(port, () => {
-  console.log(`Escuchando en el puerto ${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Escuchando en el puerto ${process.env.PORT}`);
 });
