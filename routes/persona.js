@@ -45,7 +45,7 @@ app.post("/personas/add", async (req, res) => {
 		DNI: body.DNI,
 		email: body.email,
     telefono: body.telefono
-	})
+	});
  
   console.log(persona);
 
@@ -72,11 +72,19 @@ app.put("/personas/edit", (req, res) => {
     });
 });
 
-app.delete("/personas/delete", (req, res) => {
+app.delete("/persona/delete/:id", (req, res) => {
+  Persona.remove({ _id: req.params.id }).exec((error, data) => {
+    if (error) {
+      res.status(500).json({
+        resul: "fallo",
+        error,
+      });
+    }
     res.json({
-        resu: "ok",
-        personas: {}
+      resul: "ok",
+      persona: data,
     });
+  });
 });
 
 //export 
