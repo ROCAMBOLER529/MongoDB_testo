@@ -20,7 +20,7 @@ app.get("/personas/all", (req, res) => {
 
 app.get(`/personas/:id`, (req, res) => {
     const id = req.params.id; // id de personas/${id} 
-    Persona.find({_id: id}).exec((err, persona_data) => {
+     Persona.findOne ({ _id: id }).exec((err, persona_data) => {
         if (err) {
             res.status(500).json({
                 resu: "failed",
