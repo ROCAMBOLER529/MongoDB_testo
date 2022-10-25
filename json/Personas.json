@@ -2,27 +2,53 @@
   "_id": {
     "$oid": "633b56f63f0e7ee5d31ad7d9"
   },
-  "dni": "43918478",
-  "nombre": "Lucio",
-  "apellido": "Alonso",
-  "mail": "lucioalonso@gmail.com",
-  "telefono": "1128665544"
+  "dni": "12369258",
+  "nombre": "Pepe",
+  "apellido": "Mujica",
+  "mail": "mujica@mail.com",
+  "telefono": "1122556699",
+  "rol": "administrador",
+  "password": "abcdefg"
 },{
   "_id": {
     "$oid": "633b56f63f0e7ee5d31ad7da"
   },
-  "dni": "43918478",
-  "nombre": "Lucas",
-  "apellido": "Desumbila",
-  "mail": "lucasdesumbila@gmail.com",
-  "telefono": "1118665544"
+  "dni": "32147258",
+  "nombre": "Rafael",
+  "apellido": "Correa",
+  "mail": "correa@mail.com",
+  "telefono": "7755331199",
+  "rol": "contribuyente",
+  "password": "correa"
 },{
   "_id": {
-    "$oid": "633b56f63f0e7ee5d31ad7db"
+    "$oid": "635441b560cc97c3d76a43d6"
   },
-  "dni": "44918478",
-  "nombre": "Juan",
-  "apellido": "Perotti",
-  "mail": "juanperotti@gmail.com",
-  "telefono": "1148665544"
+  "nombre": "Evo",
+  "apellido": "Morales",
+  "dni": "32198725",
+  "mail": "morales@mail.com",
+  "telefono": "36 65895178",
+  "rol": "contribuyente",
+  "password": "moraleja"
+},{
+  "_id": {
+    "$oid": "6355956a40d5466b41fd4754"
+  },
+  "nombre": "Gustavo",
+  "apellido": "Petro",
+  "dni": "69258147",
+  "mail": "petro@mail.com",
+  "telefono": "35 69258147"
+},{
+  "_id": {
+    "$oid": "6357667923e9870b8a2bc32f"
+  },
+  "nombre": "",
+  "apellido": "",
+  "dni": "",
+  "mail": "alferez@mail.com",
+  "telefono": "",
+  "password": "$2a$10$kZTf141g3aDwnxLPlbTHUOLjtpnUJbMBrGip6pBP9077Wi8M/N89S",
+  "rol": "contribuyente"
 }]
