@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 // payload en este caso se le a
 const generarToken = (id_usuario) => {
     const payload = {
-        id
+        id_usuario
     }
     
     return new Promise((result, reject) => {
@@ -24,4 +24,5 @@ const generarToken = (id_usuario) => {
 
 
 
-module.exports = {generarToken, verificarToken};
+module.exports = generarToken;
+// verificarToken
