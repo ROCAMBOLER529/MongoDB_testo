@@ -7,7 +7,6 @@ const {
   verificarReclamo,
 } = require("../middleware/autenticacion.js");
 const verificarResuelta = require("../middleware/reclamos.js");
-const { query } = require("express");
 
 app.get("/reclamos/all", verificarRol, (req, res) => {
   Reclamo.find().exec((err, reclamos_data) => {
@@ -25,186 +24,146 @@ app.get("/reclamos/all", verificarRol, (req, res) => {
   });
 });
 
-app.get("/reclamos/pendientes/all", verificarRol, (req, res) => {
-  Reclamo.find({ fecha_resuelto: "" }).exec((err, reclamos_data) => {
-    if (err) {
-      res.status(500).json({
-        res: "failed",
-        err,
-      });
-    } else {
-      res.json({
-        resu: "ok",
-        reclmao: reclamos_data,
-      });
-    }
-  });
-});
-
-app.get("/reclamos/:categoria", verificarRol, (req, res) => {
-  let categoria = req.params.categoria;
-
-  Reclamo.find({ categoria: categoria }).exec((err, reclamos_data) => {
-    if (err) {
-      res.status(500).json({
-        resu: "failed",
-        err,
-      });
-    } else {
-      res.json({
-        resu: "ok",
-        reclamo: reclamos_data,
-      });
-    }
-  });
-});
-
-app.get("/reclamos/pendientes/:categoria", verificarRol, (req, res) => {
-  /*
-  let categoria = req.params.categoria;
-
-  Reclamo.find({ categoria: categoria, fecha_resuelta: "" }).exec(
-    (err, reclamos_data) => {
-      if (err) {
-        res.status(500).json({
-          resu: "failed",
-          err,
-        });
-      } else {
-        res.json({
-          resu: "ok",
-          reclamo: reclamos_data,
-        });
-      }
-    }
-  );
-
-  */
-
-  
-  
-  console.log(filtrarCont("alumbrado"));
-  
-  Reclamo.where({ categoria: "alumbrado" }).countDocuments((err, cant) => {
-    if (err) {
-      res.status(500).json({
-        resu: "failed",
-        err,
-      });
-    } else {
-      res.json({
-        resu: "ok",
-        cantidad: cant,
-      });
-    }
-  });
-});
-
-/*
-  "tipo": "arbolado" --> categoria a buscar
-  "cant": "7" --> cantidad de arbolados, usar cont.
-  "domicilios": "5a, 5b, 5c" --> todos los domicilios.
-
-  "tipo": "arbolado" --> categoria a buscar
-  "cant": "4" --> cantidad de arbolados, usar cont.
-  "domicilios": "5a, 5b" --> el domicilio.
-*/
-
-app.get("/reclamos/parcial2", verificarRol, (req, res) => {
-  /* 
-  direccion = req.body.direccion;
-
-  ------------------
-  const data = await Voto.find({});
-  const tipos = []
-
-  ------------------
-  
-  const filtrarCont = (categ) => Reclamo.where({ categoria: categ }).count((err, cont) => {
-    if (err) {
-      return err;
-    } else {
-      return cont;
-    }
-  });
-
-  const filtrarDir = (dir) => Reclamo.find({ direccion: dir }).exec(err, data) => {
-    if (err) {
-      return err;
-    } else {
-      return map(data.direccion);
-    }
+app.get("/reclamos/pendientes/all", verificarRol, async (req, res) => {
+  try {
+    const data = await Reclamo.find({});
+    const pendiente = data.filter((a) => a.fecha_resuelta == "");
+    res.json({
+      resu: "ok",
+      pendiente,
+    });
+  } catch (err) {
+    res.status(500).json({
+      res: "failed",
+      err,
+    });
   }
+});
+
+app.get("/reclamos/parcial", verificarRol, async (req, res) => {
+  try {
+    const data = await Reclamo.find({});
+    const tipos = ["arbolado", "alumbrado", "pluvial", "limpieza"];
+    const cantsPorTipos = tipos.map((t) => {
+      const filtrados = data.filter((v) => v.categoria == t);
+      return {
+        categoria: t,
+        cant: filtrados.length,
+        votantes: filtrados.map((v) => v.nombre),
+      };
+    });
+    res.json({
+      resu: "ok",
+      cantsPorTipos,
+    });
+  } catch (err) {
+    res.status(500).json({
+      resu: "failed",
+      err,
+    });
+  }
+});
+
+app.get("/reclamos/:categoria", verificarRol, async (req, res) => {
+  let categoria = req.params.categoria;
 
   try {
-    let cantCategoria = await filtrarCont("alumbrado");
-    let arrDir = await filtrarDir(direccion);
+    const data = await Reclamo.find({});
+    const filtrados = data.filter((a) => a.categoria == categoria);
+    res.json({
+      resu: "ok",
+      filtrados,
+    });
+    
+  } catch (err) {
+    res.status(500).json({
+      resu: "failed",
+      err,
+    });
+  }
+});
 
-    res.json([
-      {
-        tipo: "alumbrado",
-        cant: cantArbolado
-      },
-      {
-        tipo: "arbolado",
-        cant: cantArbolado
-      },
-      {
-        tipo: "limpieza",
-        cant: cantLimpieza
-      },
-      {
-        tipo: "pluvial",
-        cant: cantPluvial
-      }
-    ]);
+app.get("/reclamos/pendientes/:categoria", verificarRol, async (req, res) => {
+  let categoria = req.params.categoria;
+
+  try {
+    const data = await Reclamo.find({});
+    const filtrados = data.filter((a) => (a.categoria == categoria) && (a.fecha_resuelta == ""));
+    res.json({
+      resu: "Ok",
+      filtrados
+    });
+    console.log("1");
+    
   } catch(err) {
     res.status(500).json({
       resu: "failed",
-      err
-    });
+      err,
+    })
   }
-  }); */
-  
 
-  
 });
 
-app.get("/reclamos/piso/:domicilio", (req, res) => {
+app.get("/reclamos/piso/:domicilio", async (req, res) => {
   let domicilio = req.params.domicilio;
 
-  Reclamo.find({ domicilio: domicilio }).exec((err, reclamos_data) => {
-    if (err) {
+  try {
+    const data = await Reclamo.find({});
+    const filtrados = data.filter((a) => (a.domicilio == domicilio));
+    res.json({
+      resu: "ok",
+      filtrados
+    });
+    
+  } catch(err) {
+    res.status(500).json({
+      resu: "failed",
+      err,
+    })
+  }
+});
+
+app.get("/reclamos/pendiente/masViejo", async (req, res) => {
+
+  try {
+    const data = await Reclamo.find({});
+    const filtrados = (data.filter((a) => a.fecha_resuelta == ""));
+    const masViejo = filtrados.sort((a, b) => {
+      new Date(a.fecha_creacion) - new Date(b.fecha_creacion);
+    });
+    res.json({
+      resu: "ok",
+      masViejo
+    });
+    
+  } catch(err) {
+    res.status(500).json({
+      resu: "failed",
+      err,
+    })
+  }
+
+});
+
+app.get("/reclamos/piso/pendiente/:domicilio", async (req, res) => {
+    let domicilio = req.params.domicilio;
+  
+    try {
+      const data = await Reclamo.find({});
+      const filtrados = data.filter((a) => (a.domicilio == domicilio) && (a.fecha_resuelta == ""));
+      res.json({
+        resu: "ok",
+        filtrados
+      });
+      
+    } catch(err) {
       res.status(500).json({
         resu: "failed",
         err,
-      });
-    } else {
-      res.json({
-        resu: "ok",
-        reclamo: reclamos_data,
-      });
+      })
     }
-  });
 });
 
-app.get("/reclamos/piso/pendiente/:domicilio", (req, res) => {
-    let domicilio = req.params.domicilio;
-  
-    Reclamo.find({ domicilio: domicilio, fecha_resuelta: "" }).exec((err, reclamos_data) => {
-      if (err) {
-        res.status(500).json({
-          resu: "failed",
-          err,
-        });
-      } else {
-        res.json({
-          resu: "ok",
-          reclamo: reclamos_data,
-        });
-      }
-    });
-  });
 
 app.post("/reclamos/add", verificarReclamo, async (req, res) => {
   let body = req.body;
@@ -285,7 +244,7 @@ app.put("/reclamos/resueltos/:id", verificarRol, verificarResuelta, (req, res) =
         });
       }
     });
-  });
+});
 
 app.delete("/reclamos/delete/:id", verificarRol, (req, res) => {
   let id = req.params.id;
@@ -304,4 +263,5 @@ app.delete("/reclamos/delete/:id", verificarRol, (req, res) => {
   });
 });
 
+//export
 module.exports = app;
