@@ -160,19 +160,32 @@
 					"name": "SignUp",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "usuario",
+								"value": "morales@mail.com",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "moraleja",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
 									"key": "mail",
 									"value": "alferez@mail.com",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "password",
 									"value": "alferez",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -262,213 +275,6 @@
 		{
 			"name": "Reclamos",
 			"item": [
-				{
-					"name": "Obtener todos reclamos",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/reclamos/all",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"reclamos",
-								"all"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Obtener todos pend. reclamos",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "rol",
-									"value": "administrador",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/reclamos/pendientes/all",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"reclamos",
-								"pendientes",
-								"all"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Obtener un reclamo",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/reclamos/:id",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"reclamos",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "633b56f63f0e7ee5d31ad7d8"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Obtener todos por categoria",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "rol",
-									"value": "administrador",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/reclamos/:categoria",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"reclamos",
-								":categoria"
-							],
-							"variable": [
-								{
-									"key": "categoria",
-									"value": "alumbrado"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Obtener pend. por categoria",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "rol",
-									"value": "administrador",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:3000/reclamos/pendientes/:categoria",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"reclamos",
-								"pendientes",
-								":categoria"
-							],
-							"variable": [
-								{
-									"key": "categoria",
-									"value": "alumbrado"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Obtener todos por piso",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/reclamos/piso/:domicilio",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"reclamos",
-								"piso",
-								":domicilio"
-							],
-							"variable": [
-								{
-									"key": "domicilio",
-									"value": "5a"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Obtener pend. por piso",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/reclamos/piso/pendiente/:domicilio",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"reclamos",
-								"piso",
-								"pendiente",
-								":domicilio"
-							],
-							"variable": [
-								{
-									"key": "domicilio",
-									"value": "5a"
-								}
-							]
-						}
-					},
-					"response": []
-				},
 				{
 					"name": "Agregar un reclamo",
 					"request": {
@@ -561,6 +367,11 @@
 									"key": "fecha",
 									"value": "16/3/2022",
 									"type": "text"
+								},
+								{
+									"key": "rol",
+									"value": "administrador",
+									"type": "text"
 								}
 							]
 						},
@@ -578,7 +389,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "633b56f63f0e7ee5d31ad7db"
+									"value": "635757d28dcd8655ca2fc0c5"
 								}
 							]
 						}
@@ -606,6 +417,309 @@
 									"key": "id",
 									"value": "6356d1b721d75615d04fb095"
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reclamos GETs",
+			"item": [
+				{
+					"name": "Obtener todos reclamos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rol",
+									"value": "administrador",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/reclamos/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reclamos",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos pend. reclamos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rol",
+									"value": "administrador",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/reclamos/pendientes/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reclamos",
+								"pendientes",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un reclamo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/reclamos/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reclamos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "633b56f63f0e7ee5d31ad7d8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos por categoria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "usuario",
+								"value": "morales",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "password",
+								"value": "abc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rol",
+									"value": "administrador",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/reclamos/:categoria",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reclamos",
+								":categoria"
+							],
+							"variable": [
+								{
+									"key": "categoria",
+									"value": "pluvial"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener pend. por categoria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rol",
+									"value": "administrador",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/reclamos/pendientes/:categoria",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reclamos",
+								"pendientes",
+								":categoria"
+							],
+							"variable": [
+								{
+									"key": "categoria",
+									"value": "alumbrado"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos por piso",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/reclamos/piso/:domicilio",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reclamos",
+								"piso",
+								":domicilio"
+							],
+							"variable": [
+								{
+									"key": "domicilio",
+									"value": "5a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener pend. por piso",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/reclamos/piso/pendiente/:domicilio",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reclamos",
+								"piso",
+								"pendiente",
+								":domicilio"
+							],
+							"variable": [
+								{
+									"key": "domicilio",
+									"value": "1b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Parcial2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rol",
+									"value": "administrador",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/reclamos/parcial",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reclamos",
+								"parcial"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener mas viejo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rol",
+									"value": "administrador",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/reclamos/pendiente/masViejo",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reclamos",
+								"pendiente",
+								"masViejo"
 							]
 						}
 					},
