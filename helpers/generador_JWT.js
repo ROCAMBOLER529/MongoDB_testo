@@ -5,24 +5,18 @@ const jwt = require("jsonwebtoken");
 
 // payload en este caso se le a
 const generarToken = (id_usuario) => {
-    const payload = {
-        id_usuario
-    }
-    
-    return new Promise((result, reject) => {
-        jwt.sign(payload, process.env.CLAVE_SECRETA, {
-            expiresIn: 60000
-        }, (err, token) => {
-            if (err) {
-                reject(err);
+    return new Promise((resolve, reject) => {
+        const payload = { id: id_usuario };
+
+        jwt.sign(payload, process.env.CLAVE_SECRETA, {expiresIn: process.env.TIEMPO_DE_CADUCIDAD}, (error, token) => {
+            if (error) {
+                reject(error);
             } else {
-                result(token);
+                resolve(token);
             }
-        });
+        }); 
     });
 };
-
-
 
 module.exports = generarToken;
 // verificarToken
