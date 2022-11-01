@@ -6,9 +6,7 @@
   "nombre": "Pepe",
   "apellido": "Mujica",
   "mail": "mujica@mail.com",
-  "telefono": "1122556699",
-  "rol": "administrador",
-  "password": "abcdefg"
+  "telefono": "1122556699"
 },{
   "_id": {
     "$oid": "633b56f63f0e7ee5d31ad7da"
@@ -17,9 +15,7 @@
   "nombre": "Rafael",
   "apellido": "Correa",
   "mail": "correa@mail.com",
-  "telefono": "7755331199",
-  "rol": "contribuyente",
-  "password": "correa"
+  "telefono": "7755331199"
 },{
   "_id": {
     "$oid": "635441b560cc97c3d76a43d6"
@@ -28,9 +24,7 @@
   "apellido": "Morales",
   "dni": "32198725",
   "mail": "morales@mail.com",
-  "telefono": "36 65895178",
-  "rol": "contribuyente",
-  "password": "moraleja"
+  "telefono": "36 65895178"
 },{
   "_id": {
     "$oid": "6355956a40d5466b41fd4754"
@@ -48,7 +42,5 @@
   "apellido": "",
   "dni": "",
   "mail": "alferez@mail.com",
-  "telefono": "",
-  "password": "$2a$10$kZTf141g3aDwnxLPlbTHUOLjtpnUJbMBrGip6pBP9077Wi8M/N89S",
-  "rol": "contribuyente"
+  "telefono": ""
 }]
