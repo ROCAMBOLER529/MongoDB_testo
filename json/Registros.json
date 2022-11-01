@@ -2,64 +2,101 @@
   "_id": {
     "$oid": "633b56f63f0e7ee5d31ad7d8"
   },
-  "categoria": "ninguna",
+  "categoria": "limpieza",
   "domicilio": "5a",
-  "fecha_creacion": "26/7/2022",
-  "fecha_resuelta": "28/7/2022"
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1658804400000"
+    }
+  },
+  "fecha_resuelta": "2022-07-28"
 },{
   "_id": {
     "$oid": "633b56f63f0e7ee5d31ad7db"
   },
-  "categoria": "avl",
+  "categoria": "pluvial",
   "domicilio": "3b",
-  "fecha_creacion": "8/2/2009",
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1249182000000"
+    }
+  },
   "fecha_resuelta": ""
 },{
   "_id": {
     "$oid": "633b56f63f0e7ee5d31ad7dc"
   },
-  "categoria": "solo milpieza",
+  "categoria": "limpieza",
   "domicilio": "7a",
-  "fecha_creacion": "21/6/2021",
-  "fecha_resuelta": "7/7/2021"
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1624244400000"
+    }
+  },
+  "fecha_resuelta": "2021-07-07"
 },{
   "_id": {
     "$oid": "635754d96c2a7d2666c5f67d"
   },
-  "fecha_creacion": "26/8/2001",
-  "fecha_resuelta": "12/4/2009",
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "998794800000"
+    }
+  },
+  "fecha_resuelta": "2009-12-04",
   "categoria": "alumbrado",
-  "domicilio": "5a"
+  "domicilio": "5a",
+  "__v": 0
 },{
   "_id": {
     "$oid": "6357576aa8ef40570f3e9a47"
   },
-  "fecha_creacion": "12/4/2007",
-  "fecha_resuelta": "12/4/2009",
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1196737200000"
+    }
+  },
+  "fecha_resuelta": "",
   "categoria": "alumbrado",
-  "domicilio": "5a"
+  "domicilio": "5a",
+  "__v": 0
 },{
   "_id": {
     "$oid": "635757baad8c5147da34bf9a"
   },
-  "fecha_creacion": "12/4/2006",
-  "fecha_resuelta": "12/4/2009",
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1165201200000"
+    }
+  },
+  "fecha_resuelta": "2009-12-04",
   "categoria": "alumbrado",
-  "domicilio": "5a"
+  "domicilio": "5a",
+  "__v": 0
 },{
   "_id": {
     "$oid": "635757d28dcd8655ca2fc0c5"
   },
-  "fecha_creacion": "12/4/2006",
-  "fecha_resuelta": "16/3/2022",
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1165201200000"
+    }
+  },
+  "fecha_resuelta": "2022-03-16",
   "categoria": "alumbrado",
-  "domicilio": "5a"
+  "domicilio": "5a",
+  "__v": 0
 },{
   "_id": {
     "$oid": "63575bd178f326e211444584"
   },
-  "fecha_creacion": "12/4/2006",
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1165201200000"
+    }
+  },
   "fecha_resuelta": "",
   "categoria": "alumbrado",
-  "domicilio": "1b"
+  "domicilio": "1b",
+  "__v": 0
 }]
