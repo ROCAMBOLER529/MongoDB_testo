@@ -1,6 +1,6 @@
 const mongoose = require(`mongoose`); // se declara a mongoose
 const reclamos_schema = new mongoose.Schema({
-  fecha_creacion: String,
+  fecha_creacion: Date,
   fecha_resuelta: String,
   categoria: String,
   domicilio: String,
