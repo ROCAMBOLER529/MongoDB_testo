@@ -115,7 +115,6 @@ app.delete("/personas/delete/:id", verificarRol, (req, res) => {
   });
 });
 
-//export
 module.exports = app;
 
 /* 
@@ -223,6 +222,6 @@ app.delete("/persona/delete/:id", (req, res) => {
   });
 });
 
-module.exports = app;
+
 
 */
