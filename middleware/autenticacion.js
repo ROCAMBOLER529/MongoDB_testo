@@ -14,19 +14,24 @@ const verificarRol = (req, res, next) => {
 };
 
 const verificarToken = (req, res, next) => {
-  const token = req.header.token;
+  const token = req.get("token");
   try {
     const { persona } = jwt.verify(token, process.env.CLAVE_SECRETA);
+    if (usuario) {
+      req.userID = usuario.id;
+      next();
+    } else {
+      res.status(401).json({
+        resu: "false",
+        message: "Fallo de autenticacion",
+      });
+      next();
+    }
   } catch (e) {
     res.status(401).json({
-      resu: "Fallo de autenticacion",
+      resu: "false",
       e,
     });
-    next();
-  }
-
-  if (persona) {
-    req.get(token);
     next();
   }
 };
@@ -35,8 +40,7 @@ const verificarReclamo = (req, res, next) => {
     let body = req.body;
 
     
-    
-    if (body.categoria != "alumbrado" && "arbolado" && "limpieza" && "pluvial") {
+    if (body.categoria != "Alumbrado" && body.categoria != "Arbolado" && body.categoria != "Limpieza" && body.categoria != "Pluvial") {
         res.status(400).json({
             resu: "false",
             mensaje: "Categoria inexistente"
