@@ -43,7 +43,7 @@ app.get("/reclamos/pendientes/all", verificarRol, async (req, res) => {
 app.get("/reclamos/parcial", verificarRol, async (req, res) => {
   try {
     const data = await Reclamo.find({});
-    const tipos = ["arbolado", "alumbrado", "pluvial", "limpieza"];
+    const tipos = ["Arbolado", "Alumbrado", "Pluvial", "Limpieza"];
     const cantsPorTipos = tipos.map((t) => {
       const filtrados = data.filter((v) => v.categoria == t);
       return {
@@ -52,7 +52,9 @@ app.get("/reclamos/parcial", verificarRol, async (req, res) => {
         votantes: filtrados.map((v) => v.nombre),
       };
     });
+    console.log("1");
     res.json({
+      
       resu: "ok",
       cantsPorTipos,
     });
@@ -64,12 +66,13 @@ app.get("/reclamos/parcial", verificarRol, async (req, res) => {
   }
 });
 
-app.get("/reclamos/:categoria", verificarRol, async (req, res) => {
+app.get("/reclamos/todos/:categoria", verificarRol, async (req, res) => {
   let categoria = req.params.categoria;
 
   try {
     const data = await Reclamo.find({});
     const filtrados = data.filter((a) => a.categoria == categoria);
+    console.log("3");s
     res.json({
       resu: "ok",
       filtrados,
@@ -175,19 +178,21 @@ app.post("/reclamos/add", verificarReclamo, async (req, res) => {
     domicilio: body.domicilio,
   });
 
-  console.log(reclamo);
-
-  res.json({
-    ok: true,
-    reclamo: reclamo,
-  });
+  
 
   try {
+    console.log("1");
     let reclamoDB = await reclamo.save();
-  } catch (e) {
-    res.status(400).json({
+    console.log("2");
+    res.json({
+      ok: true,
+      reclamo,
+    });
+  } catch (err) {
+    console.log("3");
+    res.status(500).json({
       ok: false,
-      err,
+      err
     });
   }
 });
@@ -207,7 +212,7 @@ app.put("/reclamos/edit/:id", verificarRol, async (req, res) => {
     }
   ).exec((err, reclamos_data) => {
     if (err) {
-      res.status(500).json({
+      res.status(400).json({
         resu: "failed",
         err,
       });
@@ -262,6 +267,8 @@ app.delete("/reclamos/delete/:id", verificarRol, (req, res) => {
     });
   });
 });
+
+
 
 //export
 module.exports = app;
