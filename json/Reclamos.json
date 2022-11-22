@@ -1,0 +1,245 @@
+[{
+  "_id": {
+    "$oid": "633b56f63f0e7ee5d31ad7d8"
+  },
+  "categoria": "Limpieza",
+  "domicilio": "5a",
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1658793600000"
+    }
+  },
+  "fecha_resuelta": "2022-07-27"
+},{
+  "_id": {
+    "$oid": "633b56f63f0e7ee5d31ad7db"
+  },
+  "categoria": "Pluvial",
+  "domicilio": "3b",
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1249171200000"
+    }
+  },
+  "fecha_resuelta": ""
+},{
+  "_id": {
+    "$oid": "633b56f63f0e7ee5d31ad7dc"
+  },
+  "categoria": "Limpieza",
+  "domicilio": "7a",
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1624233600000"
+    }
+  },
+  "fecha_resuelta": "2021-07-27"
+},{
+  "_id": {
+    "$oid": "635754d96c2a7d2666c5f67d"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1251244800000"
+    }
+  },
+  "fecha_resuelta": "2009-12-04",
+  "categoria": "Alumbrado",
+  "domicilio": "5a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6357576aa8ef40570f3e9a47"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1196726400000"
+    }
+  },
+  "fecha_resuelta": "",
+  "categoria": "Alumbrado",
+  "domicilio": "5a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "635757baad8c5147da34bf9a"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1259884800000"
+    }
+  },
+  "fecha_resuelta": "2009-12-05",
+  "categoria": "Alumbrado",
+  "domicilio": "5a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "635757d28dcd8655ca2fc0c5"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1647388800000"
+    }
+  },
+  "fecha_resuelta": "2022-12-04",
+  "categoria": "Alumbrado",
+  "domicilio": "5a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63575bd178f326e211444584"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1165190400000"
+    }
+  },
+  "fecha_resuelta": "",
+  "categoria": "Alumbrado",
+  "domicilio": "1b",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63575bd178f326e211444585"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1165190400000"
+    }
+  },
+  "fecha_resuelta": "",
+  "categoria": "Alumbrado",
+  "domicilio": "2b",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63575bd178f326e211444586"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1165190400000"
+    }
+  },
+  "fecha_resuelta": "",
+  "categoria": "Alumbrado",
+  "domicilio": "3b",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63575bd178f326e211444587"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1165190400000"
+    }
+  },
+  "fecha_resuelta": "",
+  "categoria": "Alumbrado",
+  "domicilio": "4b",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63575bd178f326e211444588"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1165190400000"
+    }
+  },
+  "fecha_resuelta": "",
+  "categoria": "Alumbrado",
+  "domicilio": "9b",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63575bd178f326e211444589"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1165190400000"
+    }
+  },
+  "fecha_resuelta": "",
+  "categoria": "Alumbrado",
+  "domicilio": "45b",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637befd61f10140ab9776d39"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1165190400000"
+    }
+  },
+  "fecha_resuelta": "2007-05-21",
+  "categoria": "Limpieza",
+  "domicilio": "5a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637c6153d73fd6a99e056139"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1297814400000"
+    }
+  },
+  "fecha_resuelta": "2011-02-21",
+  "categoria": "Pluvial",
+  "domicilio": "5a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637c61cad73fd6a99e05613a"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1510876800000"
+    }
+  },
+  "fecha_resuelta": "2017-11-20",
+  "categoria": "Pluvial",
+  "domicilio": "8e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637c62d0d73fd6a99e05613b"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1449619200000"
+    }
+  },
+  "fecha_resuelta": "2015-12-24",
+  "categoria": "Arbolado",
+  "domicilio": "8e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637c6358d73fd6a99e05613c"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1418083200000"
+    }
+  },
+  "fecha_resuelta": "2015-01-20",
+  "categoria": "Arbolado",
+  "domicilio": "9a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637c8d537913fb5dabd28c7f"
+  },
+  "fecha_creacion": {
+    "$date": {
+      "$numberLong": "1297814400000"
+    }
+  },
+  "fecha_resuelta": "2011-02-20",
+  "categoria": "Pluvial",
+  "domicilio": "3e",
+  "__v": 0
+}]
